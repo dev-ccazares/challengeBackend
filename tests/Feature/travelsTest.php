@@ -18,7 +18,7 @@ class travelsTest extends TestCase
     public function testGetTravels()
     {
         Travel::factory(5)->create();
-        $response = $this->getJson('/api/travels');
+        $response = $this->getJson('/api/travel');
         $response->assertStatus(200);
         $response->assertJson(Travel::all()->toArray());
     }
